@@ -16,4 +16,8 @@ describe('Articles Service', function () {
     expect(ArticleService).to.exist();
   });
 
+  it('should expose a getArticles method');
+  it('should return a promise when calling getArticles');
+  it('should $log a "Request Error! There was an error with the request." error if the server returns a 500 status');
+
 });
