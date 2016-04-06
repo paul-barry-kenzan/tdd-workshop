@@ -21,7 +21,12 @@ describe('Articles Service', function () {
     expect(angular.isFunction(ArticleService.getArticles)).to.be.true();
   });
 
-  it('should return a promise when calling getArticles');
+  it('should return a promise when calling getArticles', function () {
+    expect(ArticleService.getArticles().then).to.exist();
+    expect(ArticleService.getArticles().catch).to.exist();
+  });
+
   it('should $log a "Request Error! There was an error with the request." error if the server returns a 500 status');
+  it('should retrieve the data from the data source');
 
 });
