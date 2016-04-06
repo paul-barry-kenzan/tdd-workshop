@@ -3,12 +3,14 @@
 describe('Articles Service', function () {
 
   var $rootScope;
+  var $httpBackend;
   var ArticleService;
 
   beforeEach(module('wui.workshops.tdd.articles'));
 
-  beforeEach(inject(function (_$rootScope_, _ArticleService_) {
+  beforeEach(inject(function (_$rootScope_, _$httpBackend_, _ArticleService_) {
     $rootScope = _$rootScope_;
+    $httpBackend = _$httpBackend_;
     ArticleService = _ArticleService_;
   }));
 
@@ -26,7 +28,19 @@ describe('Articles Service', function () {
     expect(ArticleService.getArticles().catch).to.exist();
   });
 
+  it('should retrieve the data from the data source', function(){
+    $httpBackend
+      .whenGET('path/to/file.json')
+      .respond(200, [{}]);
+
+    ArticleService.getArticles()
+      .then(function(response){
+        expect(response.data.length).to.equal(1);
+      });
+
+    $httpBackend.flush();
+  });
+
   it('should $log a "Request Error! There was an error with the request." error if the server returns a 500 status');
-  it('should retrieve the data from the data source');
 
 });

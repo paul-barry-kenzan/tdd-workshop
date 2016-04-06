@@ -11,9 +11,10 @@
   function ArticleService($http) {
 
     this.getArticles = function () {
-      return $http({});
+      return $http.get('path/to/file.json');
     }
 
   }
 
 })(angular);
+
