@@ -3,6 +3,6 @@
 (function (angular) {
 
   angular
-    .module('wui.workshops.tdd', []);
+    .module('wui.workshops.tdd.articles', []);
 
 })(angular);
