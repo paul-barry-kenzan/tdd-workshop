@@ -10,6 +10,10 @@
 
   function ArticleService() {
 
+    this.getArticles = function () {
+
+    }
+
   }
 
 })(angular);
