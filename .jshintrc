@@ -1,0 +1,25 @@
+{
+  "esversion": 6,
+  "bitwise": true,
+  "browser": true,
+  "curly": true,
+  "eqeqeq": true,
+  "expr": true,
+  "forin": true,
+  "freeze": true,
+  "latedef": false,
+  "noarg": true,
+  "nonew": false,
+  "nonbsp": true,
+  "plusplus": true,
+  "undef": true,
+  "unused": true,
+  "strict": true,
+  "mocha": false,
+  "node": true,
+  "globals": {
+    "describe": true,
+    "before": true,
+    "it": true
+  }
+}

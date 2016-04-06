@@ -1,0 +1,22 @@
+{
+  "name": "webui-component-tdd-workshop",
+  "version": "0.1.0",
+  "description": "This is an example repo that was used for the April 8, 2016 TDD workshop.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "3.9.1",
+    "gulp-ng-html2js": "0.2.2",
+    "gulp-task-listing": "1.0.1",
+    "pipeline-compile-less": "0.4.0",
+    "pipeline-handyman": "1.0.0",
+    "pipeline-validate-css": "0.3.0",
+    "pipeline-validate-js": "1.0.0-rc",
+    "webui-pipeline-archive-dist": "ThomsonReuters-IPS/webui-pipeline-archive-dist#0.1.0",
+    "webui-pipeline-test-tdd": "ThomsonReuters-IPS/webui-pipeline-test-tdd#0.1.0",
+    "wiredep": "4.0.0"
+  }
+}
