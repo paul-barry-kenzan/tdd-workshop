@@ -6,12 +6,12 @@
     .module('wui.workshops.tdd.articles')
     .service('ArticleService', ArticleService);
 
-  ArticleService.$inject = [];
+  ArticleService.$inject = ['$http'];
 
-  function ArticleService() {
+  function ArticleService($http) {
 
     this.getArticles = function () {
-
+      return $http({});
     }
 
   }
