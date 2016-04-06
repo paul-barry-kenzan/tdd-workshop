@@ -16,7 +16,7 @@ As a user I want to see a list of articles displayed on the page. (WUIW-001)
 1. Create a view/directive to output the template. (WUIW-005)
 
 ### Step 1: Create a service (WUIW-002)
-- [ ] The service should retrieve a list of articles from an external data source, providing a JSON object response.
+- [x] The service should retrieve a list of articles from an external data source, providing a JSON object response.
 
 ### Step 2: Create a controller (WUIW-003)
 - [ ] The controller should store the list of articles as an array, to be iterated over when displayed to the user.
