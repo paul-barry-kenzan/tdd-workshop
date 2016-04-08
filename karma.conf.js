@@ -7,15 +7,16 @@ module.exports = function(config) {
   var bowerFiles = wiredep({devDependencies:true}).js;
   var appFiles = [
     './src/modules/**/*-module.js',
-    './src/modules/**/**/*.js'
+    './src/modules/**/**/*.js',
+    './src/modules/**/**/*.spec.js'
   ];
 
   config.set({
     basePath: './',
-    frameworks: ['mocha'],
+    frameworks: ['mocha', 'chai', 'sinon', 'sinon-chai', 'dirty-chai'],
     files: [].concat(bowerFiles, appFiles),
     preprocessors: {},
-    reporters: ['progress'],
+    reporters: ['dots'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
