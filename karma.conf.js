@@ -15,8 +15,13 @@ module.exports = function(config) {
     basePath: './',
     frameworks: ['mocha', 'chai', 'sinon', 'sinon-chai', 'dirty-chai'],
     files: [].concat(bowerFiles, appFiles),
-    preprocessors: {},
-    reporters: ['dots'],
+    preprocessors: {
+      './src/modules/**/!(*.spec).js': ['coverage']
+    },
+    reporters: ['dots', 'coverage'],
+    coverageReporter: {
+      type: 'text-summary'
+    },
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,

@@ -29,3 +29,46 @@ As a user I want to see a list of articles displayed on the page. (WUIW-001)
 
 ### Getting Started
 Now that we have our clearly defined tasks, we start to setup our files.
+
+
+### Karma Example
+
+#### Testing without Gulp
+
+```bash
+$ npm install -g karma
+
+$ npm install karma
+
+$ npm install karma-phantomjs-launcher
+
+$ npm install karma-mocha
+
+$ npm install karma-sinon
+
+$ npm install chai#2.3.0
+
+$ npm install karma-chai
+
+$ npm install karma-sinon-chai
+
+$ npm install karma-dirty-chai
+
+$ karma init
+```
+
+clean up file
+ - add frameworks
+ - correct globs
+ - add wiredeps
+ - change "reporters" to "dots"
+
+`karma start karma.conf.js`
+
+#### Karma Coverage
+https://karma-runner.github.io/0.8/config/coverage.html
+
+Additional `karma.conf.js` settings:
+ - `npm install karma-coverage`
+ - Update preprocessors
+ - Update reporters to include "coverage"
