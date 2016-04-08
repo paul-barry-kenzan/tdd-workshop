@@ -6,12 +6,19 @@
     .module('wui.workshops.tdd.articles')
     .controller('ArticleListController', ArticleListController);
 
-  ArticleListController.$inject = [];
+  ArticleListController.$inject = ['ArticleService'];
 
-  function ArticleListController() {
+  function ArticleListController(ArticleService) {
     var vm = this; // jshint ignore:line
 
     vm.articles = [];
+
+    function activate() {
+      ArticleService.getArticles();
+    }
+
+    activate();
+
   }
 
 })(angular);
