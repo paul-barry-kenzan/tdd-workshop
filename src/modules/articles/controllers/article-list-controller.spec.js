@@ -19,4 +19,9 @@ describe('Article List Controller', function () {
     expect(vm).to.not.be.undefined();
   });
 
+  it('should expose a vm.articles array');
+  it('should utilize the ArticleService to retrieve a collection of articles on initilization');
+  it('should $log an error if retrieval fails');
+  it('should store the collection as vm.articles');
+
 });
