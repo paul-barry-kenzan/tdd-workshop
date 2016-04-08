@@ -22,7 +22,7 @@ As a user I want to see a list of articles displayed on the page. (WUIW-001)
 - [x] The controller should store the list of articles as an array, to be iterated over when displayed to the user.
 
 ### Step 3: Create a HTML template (WUIW-004)
-- [ ] The HTML template should a simple ,potentially stylized, list of article details.  
+- [x] The HTML template should a simple ,potentially stylized, list of article details.  
 
 ### Step 4: Create a view/directive to output the template (WUIW-005)
 - [ ] Depending on time allotted, we will attempt to create a directive that can be used to output the articles list.
