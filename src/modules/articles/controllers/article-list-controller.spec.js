@@ -5,6 +5,7 @@ describe('Article List Controller', function () {
   var $rootScope;
   var $controller;
   var $log;
+  var $q;
   var vm;
 
   var ArticleService;
@@ -19,10 +20,11 @@ describe('Article List Controller', function () {
 
   }));
 
-  beforeEach(inject(function (_$rootScope_, _$controller_, _$log_, _ArticleService_) {
+  beforeEach(inject(function (_$rootScope_, _$controller_, _$log_, _$q_, _ArticleService_) {
     $rootScope = _$rootScope_;
     $controller = _$controller_;
     $log = _$log_;
+    $q = _$q_;
 
     ArticleService = _ArticleService_;
 
@@ -56,7 +58,15 @@ describe('Article List Controller', function () {
     expect(spy).to.have.been.calledWith('Error! Could not retrieve articles.');
   });
 
-  it('should store the collection as vm.articles');
+  it('should store the collection as vm.articles', function () {
+    ArticleService.getArticles.returns($q.resolve([{}, {}]));
+
+    vm = $controller('ArticleListController');
+
+    $rootScope.$apply();
+
+    expect(vm.articles.length).to.equal(2);
+  });
 
 });
 

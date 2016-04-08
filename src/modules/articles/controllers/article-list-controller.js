@@ -14,10 +14,16 @@
     vm.articles = [];
 
     function activate() {
-      ArticleService.getArticles()
+
+      ArticleService
+        .getArticles()
+        .then(function (articles) {
+          vm.articles = articles;
+        })
         .catch(function (err) {
           $log.error(err);
         });
+
     }
 
     activate();
