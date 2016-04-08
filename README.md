@@ -25,7 +25,7 @@ As a user I want to see a list of articles displayed on the page. (WUIW-001)
 - [x] The HTML template should a simple ,potentially stylized, list of article details.  
 
 ### Step 4: Create a view/directive to output the template (WUIW-005)
-- [ ] Depending on time allotted, we will attempt to create a directive that can be used to output the articles list.
+- [ ] ~~Depending on time allotted, we will attempt to create a directive that can be used to output the articles list.~~
 
 ### Getting Started
 Now that we have our clearly defined tasks, we start to setup our files.
