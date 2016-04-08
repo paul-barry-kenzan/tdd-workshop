@@ -12,15 +12,19 @@ describe('Article List Controller', function () {
     $rootScope = _$rootScope_;
     $controller = _$controller_;
 
-    vm = $controller('ArticleListController', {});
+    vm = $controller('ArticleListController');
   }));
 
   it('should fail', function () {
     expect(vm).to.not.be.undefined();
   });
 
-  it('should expose a vm.articles array');
-  it('should utilize the ArticleService to retrieve a collection of articles on initilization');
+  it('should expose a vm.articles array', function () {
+    expect(vm.articles).to.exist();
+    expect(angular.isArray(vm.articles)).to.be.true();
+  });
+
+  it('should utilize the ArticleService to retrieve a collection of articles on initialization');
   it('should $log an error if retrieval fails');
   it('should store the collection as vm.articles');
 

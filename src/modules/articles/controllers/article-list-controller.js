@@ -10,6 +10,8 @@
 
   function ArticleListController() {
     var vm = this; // jshint ignore:line
+
+    vm.articles = [];
   }
 
 })(angular);
