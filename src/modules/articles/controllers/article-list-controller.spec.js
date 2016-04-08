@@ -4,6 +4,7 @@ describe('Article List Controller', function () {
 
   var $rootScope;
   var $controller;
+  var $log;
   var vm;
 
   var ArticleService;
@@ -12,15 +13,16 @@ describe('Article List Controller', function () {
 
   beforeEach(module(function ($provide) {
 
-    $provide.service('ArticleService', function(){
-      this.getArticles = sinon.spy();
+    $provide.service('ArticleService', function($q){
+      this.getArticles = sinon.stub().returns($q.reject('Error! Could not retrieve articles.'));
     });
 
   }));
 
-  beforeEach(inject(function (_$rootScope_, _$controller_, _ArticleService_) {
+  beforeEach(inject(function (_$rootScope_, _$controller_, _$log_, _ArticleService_) {
     $rootScope = _$rootScope_;
     $controller = _$controller_;
+    $log = _$log_;
 
     ArticleService = _ArticleService_;
 
@@ -44,7 +46,17 @@ describe('Article List Controller', function () {
     expect(spy).to.have.been.called();
   });
 
-  it('should $log an error if retrieval fails');
+  it('should $log a "Error! Could not retrieve articles." error if retrieval fails', function () {
+    var spy = sinon.spy($log, 'error');
+
+    vm = $controller('ArticleListController');
+
+    $rootScope.$apply();
+
+    expect(spy).to.have.been.calledWith('Error! Could not retrieve articles.');
+  });
+
   it('should store the collection as vm.articles');
 
 });
+

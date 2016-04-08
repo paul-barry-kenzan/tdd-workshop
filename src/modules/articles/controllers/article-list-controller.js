@@ -6,15 +6,18 @@
     .module('wui.workshops.tdd.articles')
     .controller('ArticleListController', ArticleListController);
 
-  ArticleListController.$inject = ['ArticleService'];
+  ArticleListController.$inject = ['$log', 'ArticleService'];
 
-  function ArticleListController(ArticleService) {
+  function ArticleListController($log, ArticleService) {
     var vm = this; // jshint ignore:line
 
     vm.articles = [];
 
     function activate() {
-      ArticleService.getArticles();
+      ArticleService.getArticles()
+        .catch(function (err) {
+          $log.error(err);
+        });
     }
 
     activate();
