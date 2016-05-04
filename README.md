@@ -29,3 +29,5 @@ As a user I want to see a list of articles displayed on the page. (WUIW-001)
 
 ### Getting Started
 Now that we have our clearly defined tasks, we start to setup our files.
+
+Edits
